@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--天气详情-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:showDividers="middle"
+        >
+
+        <!--顶部-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_weight="0.8"
+            android:background="@color/colorMain">
+
+            <!--刷新按钮-->
+            <LinearLayout
+                android:id="@+id/ll_Refresh"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_fresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_refresh_white"/>
+                <TextView
+                    android:id="@+id/btnSend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="实时数据"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/small_textsize"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <!--城市/更新时间-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/medium_textsize"
+                    android:textColor="@color/colorWhite"
+                    android:gravity="center"
+                    android:text="北京"/>
+
+                <TextView
+                    android:id="@+id/tvUpdateTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhite"
+                    android:text="18:00"
+                    android:textSize="@dimen/small_textsize"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <!--农历/星期-->
+            <TextView
+                android:id="@+id/tvWeek"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="3月18日"
+                android:textColor="@color/colorWhite"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:layout_gravity="center_vertical"
+                />
+        </LinearLayout>
+
+        <!--中间-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_weight="1.7"
+            android:background="@color/colorWhite"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="5dp">
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+            <com.github.mikephil.charting.charts.PieChart
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/chart2.5"/>
+            </RelativeLayout>
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorGRAY"/>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <com.github.mikephil.charting.charts.PieChart
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/chartVOC"/>
+
+            </RelativeLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/colorGRAY"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0.8"
+            android:background="@color/colorWhite">
+
+            <LinearLayout android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@mipmap/tempreture_blue"
+                    />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.5"
+                        android:text="25℃"
+                        android:textColor="@color/colorMain"
+                        android:textSize="@dimen/medium_textsize"
+                        android:id="@+id/tv_temp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="温度"
+                        android:textColor="@color/colorMain"
+                        android:textSize="@dimen/small_textsize"/>
+                </LinearLayout>
+
+             </LinearLayout>
+
+
+            <LinearLayout android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                >
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@mipmap/wet_blue"
+                    />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.5"
+                        android:text="50%"
+                        android:textColor="@color/colorMain"
+                        android:textSize="@dimen/medium_textsize"
+                        android:id="@+id/tv_wet"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="湿度"
+                        android:textColor="@color/colorMain"
+                        android:textSize="@dimen/small_textsize"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0.8"
+            android:background="@color/colorWhite">
+
+            <LinearLayout android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                >
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@mipmap/co"
+                    />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.5"
+                        android:text="25℃"
+                        android:textColor="@color/colorMain"
+                        android:textSize="@dimen/medium_textsize"
+                        android:id="@+id/tv_CO"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="一氧化碳"
+                        android:textColor="@color/colorMain"
+                        android:textSize="@dimen/small_textsize"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+            <LinearLayout android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                >
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@mipmap/o3"
+                    />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.5"
+                        android:text="50%"
+                        android:textColor="@color/colorMain"
+                        android:textSize="@dimen/medium_textsize"
+                        android:id="@+id/tv_O3"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="臭氧"
+                        android:textColor="@color/colorMain"
+                        android:textSize="@dimen/small_textsize"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:background="@color/colorMain"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/fan_white"
+                android:id="@+id/iv_fan"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="风速"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/medium_textsize"
+                android:id="@+id/fanspeed"
+                android:layout_toRightOf="@id/iv_fan"
+                android:gravity="fill_vertical"
+                android:layout_weight="1"/>
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:id="@+id/spinner"
+                />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="0dp"
+    android:orientation="horizontal"
+    android:layout_weight="2.5"
+    android:background="@color/colorWhite">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorWhite"
+        android:layout_weight = "1"
+        android:layout_marginRight="0dp"
+        android:layout_marginLeft="5dp"
+        >
+        <TextView
+            android:layout_width="58dp"
+            android:layout_height="wrap_content"
+            android:text="NO2"
+            android:textColor="@color/colorMain"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1.03"
+            android:layout_marginRight="0dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NO"
+            android:textColor="@color/colorMain"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:layout_marginRight="0dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CH4"
+            android:textColor="@color/colorMain"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:layout_marginRight="0dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PM10"
+            android:textColor="@color/colorMain"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="0dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="8"
+        android:layout_marginLeft="0dp">
+        <com.github.mikephil.charting.charts.HorizontalBarChart
+            android:id="@+id/barchart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:layout_marginLeft="0dp"
+            />
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+
+
+    </LinearLayout>
+</LinearLayout>
